@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.zk.planform.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="1100dp"
+                android:layout_height="400dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="1100dp"
+                        android:layout_height="200dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/textStyleMidBlack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawableTop="@mipmap/cb"
+                            android:text="@string/cut_robot" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:background="@mipmap/guide"
+                            android:gravity="center"
+                            android:text="焊接机器人龙骨"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+                    <!-- 焊接工作部分 -->
+                    <RelativeLayout
+                        android:layout_width="1100dp"
+                        android:layout_height="200dp">
+
+                        <TextView
+                            android:id="@+id/tv_cut_table"
+                            android:layout_width="100dp"
+                            android:layout_height="200dp"
+                            android:layout_marginLeft="20dp"
+                            android:background="@drawable/corners_bg_cut"
+                            android:gravity="center"
+                            android:text="@string/cut_table"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/arrow_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/tv_cut_table"
+                            android:src="@mipmap/arrow" />
+
+                        <TextView
+                            android:id="@+id/tv_distin"
+                            android:layout_width="100dp"
+                            android:layout_height="200dp"
+                            android:layout_toRightOf="@+id/arrow_6"
+                            android:background="@drawable/corners_bg_distin"
+                            android:gravity="center"
+                            android:text="@string/distinguish"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/arrow_7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/tv_distin"
+                            android:src="@mipmap/arrow" />
+
+                        <TextView
+                            android:id="@+id/tv_scan_codes"
+                            android:layout_width="100dp"
+                            android:layout_height="200dp"
+                            android:layout_toRightOf="@+id/arrow_7"
+                            android:background="@drawable/corners_bg_scan"
+                            android:gravity="center"
+                            android:text="@string/scancodes"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/arrow_8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/tv_scan_codes"
+                            android:src="@mipmap/arrow" />
+
+                        <TextView
+                            android:id="@+id/tv_spot_weld"
+                            android:layout_width="100dp"
+                            android:layout_height="200dp"
+                            android:layout_toRightOf="@+id/arrow_8"
+                            android:background="@drawable/corners_bg_spotweld"
+                            android:gravity="center"
+                            android:text="@string/spot_weld"
+                            android:textColor="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/arrow_9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/tv_spot_weld"
+                            android:src="@mipmap/arrow" />
+
+                        <ImageView
+                            android:id="@+id/arrow_10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="220dp"
+                            android:src="@mipmap/arrow" />
+
+                        <TextView
+                            android:id="@+id/tv_line_weld"
+                            android:layout_width="100dp"
+                            android:layout_height="200dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="120dp"
+                            android:background="@drawable/corners_bg_lineweld"
+                            android:gravity="center"
+                            android:text="@string/line_weld"
+                            android:textColor="@color/white" />
+                    </RelativeLayout>
+
+                    <!-- 搬运机器人部分 -->
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="300dp">
+
+                    <TextView
+                        android:id="@+id/tv_weld_robot"
+                        android:layout_width="100dp"
+                        android:layout_height="600dp"
+                        android:layout_marginTop="30dp"
+                        android:text="焊接机械臂"
+                        style="@style/textStyle"
+                        android:background="@color/cyan" />
+                </RelativeLayout>
+            </FrameLayout>
+
+
+            <!-- 搬运导轨 -->
+            <RelativeLayout
+                android:layout_width="1100dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp"
+                android:background="@mipmap/guide">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="搬运机器人导轨"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/carry_robot"
+                    style="@style/textStyleMidBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="250dp"
+                    android:layout_alignParentRight="true"
+                    android:drawableTop="@mipmap/rb"
+                    android:text="@string/carry_robot" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="1100dp"
+                android:layout_height="250dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginTop="40dp"
+                        android:id="@+id/tv_start_show"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/start"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:background="@color/cyan"/>
+                </RelativeLayout>
+
+
+
+                <!-- 第一个托盘 -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_tray1"
+                        style="@style/textStyleMid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/tray3"
+                        android:text="@string/tray1" />
+
+                    <TextView
+                        android:id="@+id/tv_line_ver1"
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/tv_tray1"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/black" />
+
+                    <TextView
+                        android:id="@+id/arrow_down_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="80dp"
+                        android:background="@mipmap/arrow" />
+                </RelativeLayout>
+
+                <!-- 第二个托盘-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_tray2"
+                        style="@style/textStyleMid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/tray3"
+                        android:text="@string/tray2" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/tv_tray2"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/black" />
+
+                    <TextView
+                        android:id="@+id/arrow_down_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="80dp"
+                        android:background="@mipmap/arrow" />
+                </RelativeLayout>
+
+
+                <!-- 第三个托盘 -->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_tray3"
+                        style="@style/textStyleMid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/tray3"
+                        android:text="@string/tray3" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/tv_tray3"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/black" />
+
+                    <TextView
+                        android:id="@+id/arrow_down_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="80dp"
+                        android:background="@mipmap/arrow" />
+                </RelativeLayout>
+
+                <!-- 第四个托盘-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_tray4"
+                        style="@style/textStyleMid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/tray3"
+                        android:text="@string/tray4" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/tv_tray4"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/black" />
+
+                    <TextView
+                        android:id="@+id/arrow_down_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="80dp"
+                        android:background="@mipmap/arrow" />
+                </RelativeLayout>
+
+                <!-- 第五个托盘 -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_tray5"
+                        style="@style/textStyleMid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/tray3"
+                        android:text="@string/tray5" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/tv_tray5"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/black" />
+
+                    <TextView
+                        android:id="@+id/arrow_down_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="80dp"
+                        android:background="@mipmap/arrow" />
+                </RelativeLayout>
+
+                <!-- 第六个托盘 -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_tray6"
+                        style="@style/textStyleMid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/tray3"
+                        android:text="@string/tray6" />
+
+                    <TextView
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/tv_tray6"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/black" />
+
+                    <TextView
+                        android:id="@+id/arrow_down_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="80dp"
+                        android:background="@mipmap/arrow" />
+                </RelativeLayout>
+
+                <!-- 取货与收货 -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/arrow_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="40dp"
+                        android:drawableTop="@mipmap/arrow_up"
+                        android:text="@string/support" />
+
+                    <TextView
+                        android:id="@+id/arrow_20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="40dp"
+                        android:layout_toRightOf="@id/arrow_2"
+                        android:drawableTop="@mipmap/arrow_down"
+                        android:text="@string/get_result" />
+
+                </RelativeLayout>
+
+                <!-- 底部导轨-->
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/black" />
+        </LinearLayout>
+        <!-- 服务器机柜及电机 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/corners_bg_trans"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/textStyle"
+                    android:layout_width="200dp"
+                    android:layout_height="500dp"
+                    android:background="@drawable/corners_bg"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:text="@string/server_case" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@mipmap/pd" />
+            </LinearLayout>
+            <!-- 电机下方导轨 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/arrow_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="60dp"
+                    android:drawableLeft="@mipmap/arrow_left"
+                    android:text="AGV小车取原材料"
+
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/guide_below_energy"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="46dp"
+                    android:background="@color/black" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!--立体仓库-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/textStyle"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@mipmap/cangku"
+                android:text="@string/cubic" />
+            <!--堆垛机-->
+            <TextView
+                android:id="@+id/stack_machine"
+                style="@style/textStyle"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/corners_bg"
+                android:text="@string/stacker" />
+
+            <TextView
+                android:layout_width="5dp"
+                android:layout_height="90dp"
+                android:layout_marginLeft="130dp"
+                android:background="@color/black" />
+
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="5dp"
+                android:background="@color/black" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">planform</string>
+    <string name="server_case">服务器机柜</string>
+    <string name="cubic">立体库</string>
+    <string name="stacker">堆垛机</string>
+    <string name="tray1">托盘1</string>
+    <string name="tray2">托盘2</string>
+    <string name="tray3">托盘3</string>
+    <string name="tray4">托盘4</string>
+    <string name="tray5">托盘5</string>
+    <string name="tray6">托盘6</string>
+    <string name="cut_robot">切割机器人</string>
+    <string name="carry_robot">搬运机器人</string>
+    <string name="cut_table">切割平台</string>
+    <string name="distinguish">识别系统</string>
+    <string name="scancodes">刻码及扫码平台</string>
+    <string name="spot_weld">点焊</string>
+    <string name="line_weld">焊接</string>
+    <string name="support">原料</string>
+    <string name="get_result">成品</string>
+    <string name="start">开始演示</string>
+</resources>
