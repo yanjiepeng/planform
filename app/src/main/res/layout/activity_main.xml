@@ -164,9 +164,8 @@
                         android:layout_width="100dp"
                         android:layout_height="600dp"
                         android:layout_marginTop="30dp"
-                        android:text="焊接机械臂"
                         style="@style/textStyle"
-                        android:background="@color/cyan" />
+                        android:background="@mipmap/arm" />
                 </RelativeLayout>
             </FrameLayout>
 

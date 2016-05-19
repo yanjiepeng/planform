@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView tv_start_show,tv_cut_table,tv_distin,tv_scan_codes,tv_spot_weld,tv_line_weld;
 
-    private TextView tv_carry_robot,tv_stack_machine;
+    private TextView tv_carry_robot,tv_stack_machine,tv_weld_robot;
 
     List<View> widgetList = new ArrayList<View>();
     @Override
@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         tv_carry_robot = (TextView) findViewById(R.id.carry_robot);
         tv_stack_machine = (TextView) findViewById(R.id.stack_machine);
+        tv_weld_robot = (TextView) findViewById(R.id.tv_weld_robot);
 
 
         widgetList.add(arrow_down1);
@@ -123,6 +124,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ta.setDuration(1500);
         ta.setFillAfter(true);
         tv_carry_robot.startAnimation(ta);
+
+    }
+    /**
+     * 焊接机器人动画
+     */
+
+    private void WeldRobotAnim() {
+
+        TranslateAnimation ta = new TranslateAnimation(50,-50,0,0);
+        ta.setDuration(700);
+        ta.setRepeatCount(1);               //设置重复次数
+        ta.setRepeatMode(Animation.REVERSE);
+        tv_weld_robot.startAnimation(ta);
 
     }
 
@@ -205,6 +219,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                             if (index == 11) {
                                 startFlick(tv_spot_weld);
+                                WeldRobotAnim();
                             }
                             if (index == 12 ) {
                                 startFlick(tv_line_weld);
