@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        android.support.v7.app.ActionBar ab =  this.getSupportActionBar();
         ab.setTitle("流程演示图");
         ab.setSubtitle("工业4.0");
-//        this.setTitle("俯视图");
 
         InitWidget();
 
