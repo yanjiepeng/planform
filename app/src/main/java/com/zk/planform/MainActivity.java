@@ -4,7 +4,6 @@
 
 package com.zk.planform;
 
-import android.app.ActionBar;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -126,6 +125,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    /**
+     * 搬运返回动画
+     */
+
     private void CarryRobotAnimBack() {
 
         TranslateAnimation ta = new TranslateAnimation(-900,0,0,0);
@@ -181,9 +184,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.tv_start_show:
                 //StartShow();
-
             }
-
         }
 
     /**
