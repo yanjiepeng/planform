@@ -211,8 +211,18 @@
                         android:layout_marginTop="40dp"
                         android:id="@+id/tv_start_show"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:text="@string/start"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:background="@color/cyan"/>
+                    <TextView
+                        android:layout_marginTop="40dp"
+                        android:id="@+id/tv_reset"
+                        android:layout_below="@id/tv_start_show"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/reset"
                         android:textSize="18sp"
                         android:textColor="@color/black"
                         android:background="@color/cyan"/>

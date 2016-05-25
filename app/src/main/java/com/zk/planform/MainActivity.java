@@ -27,11 +27,11 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private TextView arrow1,arrow2,arrow3,arrow20,
+    private TextView arrow1,arrow2,arrow20,
                                 arrow_down1,arrow_down2,arrow_down3,arrow_down4,arrow_down5,arrow_down6;
     private ImageView arrow6,arrow7,arrow8,arrow9,arrow10;
 
-    private TextView tv_start_show,tv_cut_table,tv_distin,tv_scan_codes,tv_spot_weld,tv_line_weld;
+    private TextView tv_start_show,tv_reset,tv_cut_table,tv_distin,tv_scan_codes,tv_spot_weld,tv_line_weld;
 
     private TextView tv_carry_robot,tv_stack_machine,tv_weld_robot;
 
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //    CarryRobotAnim();
 
-        StartShow();
+        //StartShow();
     }
 
     private void InitWidget() {
@@ -74,7 +74,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_line_weld = (TextView) findViewById(R.id.tv_line_weld);
 
         tv_start_show = (TextView) findViewById(R.id.tv_start_show);
+        tv_reset = (TextView) findViewById(R.id.tv_reset);
         tv_start_show.setOnClickListener(this);
+        tv_reset.setOnClickListener(this);
 
         //底部箭头
 
@@ -110,6 +112,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         for (int i = 0; i <widgetList.size() ; i++) {
             widgetList.get(i).setVisibility(View.INVISIBLE);
+            if ( i == 6) {
+
+            }
         }
     }
 
@@ -183,7 +188,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
 
             case R.id.tv_start_show:
-                //StartShow();
+                StartShow();
+                break;
+            case R.id.tv_reset:
+                ResetPage();
+                break;
+
+
             }
         }
 
@@ -193,6 +204,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void ResetPage() {
         for (int i = 0; i <widgetList.size() ; i++) {
             widgetList.get(i).setVisibility(View.INVISIBLE);
+            if ( i == 6) {
+                arrow1.setText("AGV小车采集原料");
+                Drawable leftDrawable = getResources().getDrawable(R.mipmap.arrow_left);
+                leftDrawable.setBounds(0, 0, leftDrawable.getMinimumWidth(), leftDrawable.getMinimumHeight());
+                arrow1.setCompoundDrawables(leftDrawable, null, null, null);
+            }
         }
     }
 

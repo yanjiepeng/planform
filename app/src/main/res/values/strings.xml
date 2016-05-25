@@ -18,5 +18,6 @@
     <string name="line_weld">焊接</string>
     <string name="support">原料</string>
     <string name="get_result">成品</string>
-    <string name="start">开始演示</string>
+    <string name="start">开始</string>
+    <string name="reset">重置</string>
 </resources>
