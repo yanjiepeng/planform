@@ -254,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                             if (index ==13) {
                                 arrow1.setText("AGV小车收集成品");
-                                arrow1.setGravity(Gravity.CENTER);
+                                arrow1.setGravity(Gravity.TOP);
                                 startFlick(arrow1);
                                 Drawable rightDrawable = getResources().getDrawable(R.mipmap.arrow);
                                 rightDrawable.setBounds(0, 0, rightDrawable.getMinimumWidth(), rightDrawable.getMinimumHeight());
