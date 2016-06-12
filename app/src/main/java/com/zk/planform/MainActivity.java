@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -253,6 +254,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                             if (index ==13) {
                                 arrow1.setText("AGV小车收集成品");
+                                arrow1.setGravity(Gravity.CENTER);
+                                startFlick(arrow1);
                                 Drawable rightDrawable = getResources().getDrawable(R.mipmap.arrow);
                                 rightDrawable.setBounds(0, 0, rightDrawable.getMinimumWidth(), rightDrawable.getMinimumHeight());
                                 arrow1.setCompoundDrawables(null, null, rightDrawable, null);

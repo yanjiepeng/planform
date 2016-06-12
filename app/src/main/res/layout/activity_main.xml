@@ -481,6 +481,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="60dp"
                     android:drawableLeft="@mipmap/arrow_left"
+                    android:background="@mipmap/agv"
                     android:text="AGV小车取原材料"
 
                     android:textColor="@color/black"
