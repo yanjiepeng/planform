@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private TextView tv_carry_robot,tv_stack_machine,tv_weld_robot;
 
+    public boolean flag = true;
+
     List<View> widgetList = new ArrayList<View>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,13 +191,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
 
             case R.id.tv_start_show:
-                StartShow();
+                flag =true;
+                    StartShow();
                 break;
             case R.id.tv_reset:
-                ResetPage();
+                flag = false;
+                   ResetPage();
                 break;
-
-
             }
         }
 
@@ -203,6 +205,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 重置界面
      */
     private void ResetPage() {
+
         for (int i = 0; i <widgetList.size() ; i++) {
             widgetList.get(i).setVisibility(View.INVISIBLE);
             if ( i == 6) {
@@ -219,60 +222,68 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         new Thread(new Runnable() {
             @Override
             public void run() {
-                for ( int i = 0; i <widgetList.size() ; i++) {
-                    final int index = i;
-
-
-                    //执行与UI线程
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            widgetList.get(index).setVisibility(View.VISIBLE);
-                             Boolean flick = false;
-                            if (index == 6) {
-                               startFlick(tv_stack_machine);
-                            }
-                            if (index == 7) {
+                while(flag) {
+                    for (int i = 0; i < widgetList.size(); i++) {
+                        final int index = i;
+                        //执行与UI线程
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                widgetList.get(index).setVisibility(View.VISIBLE);
+                                Boolean flick = false;
+                                if (index == 6) {
+                                    startFlick(tv_stack_machine);
+                                }
+                                if (index == 7) {
                                     CarryRobotAnim();
-                            }
-                            if (index == 8) {
-                                startFlick(tv_cut_table);
-                            }
-                            if (index == 9) {
-                                startFlick(tv_distin);
-                            }
-                            if (index == 10) {
-                                startFlick(tv_scan_codes);
-                            }
-                            if (index == 11) {
-                                startFlick(tv_spot_weld);
-                                WeldRobotAnim();
-                            }
-                            if (index == 12 ) {
-                                startFlick(tv_line_weld);
-                                CarryRobotAnimBack();
-                            }
-                            if (index ==13) {
-                                arrow1.setText("AGV小车收集成品");
-                                arrow1.setGravity(Gravity.TOP);
-                                startFlick(arrow1);
-                                Drawable rightDrawable = getResources().getDrawable(R.mipmap.arrow);
-                                rightDrawable.setBounds(0, 0, rightDrawable.getMinimumWidth(), rightDrawable.getMinimumHeight());
-                                arrow1.setCompoundDrawables(null, null, rightDrawable, null);
-                                new Handler().postDelayed(new Runnable() {
-                                    public void run() {
-                                        //execute the task
-                                        startFlick(tv_stack_machine);
-                                    }
-                                }, 1000);
-                            }
+                                }
+                                if (index == 8) {
+                                    startFlick(tv_cut_table);
+                                }
+                                if (index == 9) {
+                                    startFlick(tv_distin);
+                                }
+                                if (index == 10) {
+                                    startFlick(tv_scan_codes);
+                                }
+                                if (index == 11) {
+                                    startFlick(tv_spot_weld);
+                                    WeldRobotAnim();
+                                }
+                                if (index == 12) {
+                                    startFlick(tv_line_weld);
+                                    CarryRobotAnimBack();
+                                }
+                                if (index == 13) {
+                                    arrow1.setText("AGV小车收集成品");
+                                    arrow1.setGravity(Gravity.TOP);
+                                    startFlick(arrow1);
+                                    Drawable rightDrawable = getResources().getDrawable(R.mipmap.arrow);
+                                    rightDrawable.setBounds(0, 0, rightDrawable.getMinimumWidth(), rightDrawable.getMinimumHeight());
+                                    arrow1.setCompoundDrawables(null, null, rightDrawable, null);
+                                    new Handler().postDelayed(new Runnable() {
+                                        public void run() {
+                                            //execute the task
+                                            startFlick(tv_stack_machine);
 
+                                        }
+                                    }, 1000);
+                                    new Handler().postDelayed(new Runnable() {
+                                        public void run() {
+                                            //execute the task
+                                          ResetPage();
+
+                                        }
+                                    }, 500);
+                                }
+
+                            }
+                        });
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
                         }
-                    });
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
                     }
                 }
             }

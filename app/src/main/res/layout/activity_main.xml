@@ -222,7 +222,7 @@
                         android:layout_below="@id/tv_start_show"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:text="@string/reset"
+                        android:text="@string/off"
                         android:textSize="18sp"
                         android:textColor="@color/black"
                         android:background="@color/cyan"/>
